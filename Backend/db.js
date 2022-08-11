@@ -1,10 +1,15 @@
 const mongoose= require('mongoose');
-const mongoURI= "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.5.4"
+const mongoURI= "mongodb+srv://jeevan:jeevan00@cluster0.5r11im5.mongodb.net/test"
 
 const connectToMongo=()=>{
-    mongoose.connect(mongoURI,()=>{
-        console.log("connected to mongo");
-    })
+    try{
+
+        mongoose.connect(mongoURI,()=>{
+            console.log("connected to mongo");
+        })
+    }catch(err){
+        console.log("failed to connect to mongo "+ err)
+    }
 }
 
 module.exports=connectToMongo;
