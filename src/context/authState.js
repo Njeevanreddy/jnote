@@ -1,7 +1,7 @@
 import AuthContext from "./authContext";
 import { useNavigate } from "react-router-dom";
 const NoteState=(props)=>{
-    const host="http://localhost:4000";
+    const host="https://jnote-backend.el.r.appspot.com";
     const navigate= useNavigate()
     const login=async (email,password)=>{
         const response= await fetch(`${host}/api/auth/login`,{
